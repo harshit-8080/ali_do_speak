@@ -161,6 +161,16 @@
 --------------------------------------------------------------------------------------------------------------------------------
 
 
+21. After that use good notes and explain How the two client can connect to the server.
+
+22. If one client wants to publish a message they can emit a message to the server.
+
+23. now server can consume and emit a message to both clients.
+
+
+---------------------------------------------------------------------------------------------------------------------------------       
+
+
 
 
 
