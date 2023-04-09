@@ -90,7 +90,79 @@
                          io.on('connection', (socket) => {
                                 console.log('a user connected ', socket.id);
                         });
-                ////////////////////////////////////////////////////////////////           
+                ////////////////////////////////////////////////////////////////    
+
+
+
+              16. Now once our connection is established Now send some data from server to client and client to server 
+
+                        ////////////////////////////////////////////////////////////////
+                                1. add code in io.connection and emit some event -->
+                                        setInterval((
+                                                socket.emit("fromServer")
+                                        )=>{},2000)
+
+                                2. 
+                                        io.on('connection', (socket) => {
+                                                console.log('a user connected ', socket.id);
+                                                setInterval(()=>{
+                                                        socket.emit("fromServer")
+                                                },2000)
+                                        });     
+                        ////////////////////////////////////////////////////////////////       
+                        
+
+
+
+                17. Now listen this event in client
+
+                        ////////////////////////////////////////////////////////////////
+
+                                socket.on("fromServer", () => {
+                                        const div = document.createElement("div");
+                                        div.innerText = "New Event from server";
+                                        document.body.appendChild(div);
+                                });
+
+                        ////////////////////////////////////////////////////////////////
+
+
+        18. Send some events from client to server
+
+                ////////////////////////////////////////////////////////////////
+
+                            <button id="btn"> Click Me</button>
+
+                            // sending event from client to server
+                            const btn = document.getElementById("btn");
+
+                            btn.onclick = function clickMe() {
+                                socket.emit("fromClient");
+                             };
+                             
+
+                ////////////////////////////////////////////////////////////////      
+
+        19. Server can consume this event
+                ////////////////////////////////////////////////////////////////
+
+                  socket.on("fromClient", () => {
+                        console.log("messgae received from client");
+                  });
+
+                ////////////////////////////////////////////////////////////////    
+
+        20. Now two way communication is being setup anyone can send the data
+
+                1. Client to Server
+                2. Server to Client
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 
