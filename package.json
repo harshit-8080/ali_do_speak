@@ -1,0 +1,23 @@
+{
+  "name": "ali_do_speak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshit-8080/ali_do_speak.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshit-8080/ali_do_speak/issues"
+  },
+  "homepage": "https://github.com/harshit-8080/ali_do_speak#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

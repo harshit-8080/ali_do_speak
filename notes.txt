@@ -1,0 +1,35 @@
+--> Till here 
+
+        1.  We have learned about http connection. which is over tcp
+        2.  and as we know in http connection, client make a request and server send the response and connection breaks.
+
+
+--> what if we need bi directional communication
+
+        1.  wehere anyone can make a request and anyone send a response
+
+
+--> So web socket allows use fo bi directional communication  ( pipeline setup in web sockets )
+
+        1.  Web socket also use tcp connection
+        2.  It's reliable
+        3.  node js has socket.io libray for implementation of web socket
+        4.  ror has active channel for the same.
+
+        5. socket.io has the best documentation.
+
+        6. We will little bit of frontend also, not react just dom functions.
+
+        7. It gives us a event based architecture.
+            1.  What is event based architecture, Whenever you have to do something you emit an event.
+            2.  And other end we consume an event.
+            
+            3.  Let's understand what is events in node js
+                ---> check github and start event theory and code.
+
+            4.   after that setup the basic express js project    
+
+
+
+
+
