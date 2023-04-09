@@ -53,6 +53,44 @@
 
             11. now Go to --> http://localhost:3000/socket.io/socket.io.js       
 
+            12. now in index.html
+                ////////////////////////////////////////////////////////////////
+
+                    <script src="/socket.io/socket.io.js"></script>
+                    <script src="script.js"></script>
+
+                ////////////////////////////////////////////////////////////////
+
+
+
+           13.     now in script.js 
+
+                ////////////////////////////////////////////////////////////////
+
+                        var socket = io();
+
+                ////////////////////////////////////////////////////////////////
+
+           14. now in server.js 
+
+                So Whenever anyone join this socket one connection event is emitted
+
+                ////////////////////////////////////////////////////////////////
+
+                        io.on('connection', (socket) => {
+                                console.log('a user connected');
+                        });
+
+                ////////////////////////////////////////////////////////////////
+
+             15. Every connection has unique connection id event is emitted
+
+                ////////////////////////////////////////////////////////////////
+
+                         io.on('connection', (socket) => {
+                                console.log('a user connected ', socket.id);
+                        });
+                ////////////////////////////////////////////////////////////////           
 
 
 
