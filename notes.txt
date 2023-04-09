@@ -172,8 +172,76 @@
 
 
 
+24. now Some thing meanigfull
+        1.      Delete setInterval() code from io.connection
+
+        2.      add one input tag in index.html
 
 
+
+25.     //////////////////////////////////////////////////////////////////
+
+                    <input type="text" id="newmsg">
+
+                    <button id="btn">Send</button>
+
+                    <ul id="msglist">
+
+                    </ul>
+
+        -----------------------------------------------------------
+
+                let btn = document.getElementById("btn");
+                let inputmsg = document.getElementById("newmsg");
+                let msglist = document.getElementById("msglist");
+
+                btn.onclick = function exec() {
+                                socket.emit("msg_send", {
+                                        msg: inputmsg.value,
+                                });
+                              };
+
+
+        ////////////////////////////////////////////////////////////////
+
+
+26. In server. js
+        
+        ////////////////////////////////////////////////////////////////
+
+                  socket.on("msg_send", (msg) => {
+                        console.log(msg);
+                        io.emit("msg_rcvd",msg);
+                  });
+
+        ////////////////////////////////////////////////////////////////       
+
+27. Now in client or script. js
+
+        ////////////////////////////////////////////////////////////////
+
+                socket.on("msg_rcvd", (data)=>{
+                        let li = document.createElement("li");
+                        li.innerText = data.msg;
+                        msglist.appendChild(li);
+                })
+
+       //////////////////////////////////////////////////////////////// 
+
+
+28. now if i deploy this app you and me can chat together.  (But problem is anyone have this url can chat )
+
+
+
+---------------------------------------------------------------------------------------------------
+
+29. io.emit("msg_rcvd", msg) ==> this will broadcast msg to all people in the connection.
+
+30. socket.emit("msg_rcvd", msg) ==> this will broadcast msg to only the same client
+
+31. socket.broadcast.emit("msg_rcvd", msg) ==> this will broadcast msg to all except the original one.
+
+------------------------------------------------------------------------------------------------------
 
 
 

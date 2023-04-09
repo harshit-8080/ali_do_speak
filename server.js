@@ -13,12 +13,19 @@ app.use("/", express.static(__dirname + "/public"));
 io.on("connection", (socket) => {
   console.log("a user connected", socket.id);
 
-  setInterval(() => {
-    socket.emit("fromServer");
-  }, 2000);
+  //TODO remove this setInterval
+  // setInterval(() => {
+  //   socket.emit("fromServer");
+  // }, 2000);
 
-  socket.on("fromClient", () => {
-    console.log("messgae received from client");
+  // socket.on("fromClient", () => {
+  //   console.log("messgae received from client");
+  // });
+
+  /// something meaningful
+  socket.on("msg_send", (msg) => {
+    console.log(msg);
+    io.emit("msg_rcvd", msg);
   });
 });
 
