@@ -22,12 +22,36 @@
 
         7. It gives us a event based architecture.
             1.  What is event based architecture, Whenever you have to do something you emit an event.
+            
             2.  And other end we consume an event.
             
             3.  Let's understand what is events in node js
                 ---> check github and start event theory and code.
 
-            4.   after that setup the basic express js project    
+            4.   after that setup the basic express js project 
+
+            5. install socket.io ==> npm i socket.io   
+
+            6. make a public folder and index.html file inside that.
+
+            7. To server some static file like html file we need to use middleware
+                app.use("/", express.static(__dirname + "/public"));
+
+            8. start project and go to ==> http://localhost:3000/  
+
+            9. now go to socket.io/get-started/chat  
+
+            10. Now do what ever in documentation
+                ////////////////////////////////////////////////////////////////
+                        const http = require('http');
+                        const server = http.createServer(app);
+                        const { Server } = require("socket.io");
+                        const io = new Server(server);
+
+                        server.listen(3000);
+                //////////////////////////////////////////////////////////////// 
+
+            11. now Go to --> http://localhost:3000/socket.io/socket.io.js       
 
 
 
