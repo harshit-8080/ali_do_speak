@@ -11,7 +11,7 @@ const io = new Server(server);
 app.use("/", express.static(__dirname + "/public"));
 
 io.on("connection", (socket) => {
-  console.log("a user connected", socket.id);
+  // console.log("a user connected", socket.id);
 
   //TODO remove this setInterval
   // setInterval(() => {
@@ -23,10 +23,17 @@ io.on("connection", (socket) => {
   // });
 
   /// something meaningful
+
+  ////////////////////////////////////////////////////////////////
+
+  //TODO: DAY 1
+
   socket.on("msg_send", (msg) => {
     console.log(msg);
     io.emit("msg_rcvd", msg);
   });
+
+  ////////////////////////////////////////////////////////////////
 });
 
 server.listen(3000, () => {

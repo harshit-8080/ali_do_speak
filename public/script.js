@@ -18,6 +18,10 @@ var socket = io();
 
 /// Start here for something better
 
+////////////////////////////////////////////////////////////////////////
+
+//TODO: DAY 1
+
 let btn = document.getElementById("btn");
 let inputmsg = document.getElementById("newmsg");
 let msglist = document.getElementById("msglist");
@@ -35,3 +39,5 @@ socket.on("msg_rcvd", (data) => {
 
   msglist.appendChild(limsg);
 });
+
+////////////////////////////////////////////////////////////////////////
