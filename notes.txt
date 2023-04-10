@@ -1,3 +1,7 @@
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+DAY - 1
+
+
 --> Till here 
 
         1.  We have learned about http connection. which is over tcp
@@ -242,6 +246,52 @@
 31. socket.broadcast.emit("msg_rcvd", msg) ==> this will broadcast msg to all except the original one.
 
 ------------------------------------------------------------------------------------------------------
+
+
+
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+DAY - 2
+
+
+1.	set up our chat model
+
+2.	npm i mongoose
+
+3.	make a database connection using config folder
+
+4.	prepare a chat model  --->  ( Check the code )
+
+5.  After that setup ejs ( view engine ) --> { server side rendering } Serve some client side code to server side.
+
+	1.	Go to ejs website
+
+	2.	npm i ejs
+
+	3.	mkdir views folder
+
+	4.  add in server.js --> app.set("view engine", "ejs");
+
+	5.  add this code -->
+			app.get("/chat/:roomId", (req, res) => {
+				res.render("index", {
+					name:"Harshit",
+					roomId: req.params.roomId
+				});
+			});
+
+	6.	in index.ejs
+		---------------->
+			<%= name %>
+
+			<%= roomId %>	
+		---------------->	
+
+	7.			
+
 
 
 
